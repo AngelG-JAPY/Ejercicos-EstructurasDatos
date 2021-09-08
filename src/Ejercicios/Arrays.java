@@ -5,6 +5,8 @@
  */
 package Ejercicios;
 
+import java.util.Scanner;
+
 /**
  *
  * @author USUARIO
@@ -15,7 +17,7 @@ public class Arrays {
         return (Math.random() * 100);
     }
 
-    public static int[] fillArray(int[] numbers) {
+    public static int[] fillArrayRandom(int[] numbers) {
 
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = (int) generateNumbers();
@@ -56,38 +58,32 @@ public class Arrays {
         }
         return numbers;
     }
-    
-    
-    
-    public static int binarySearch(int [] array, int element){
-        
-        
-        int firstIndex = 0, lastIndex = array.length-1;
+
+    public static int binarySearch(int[] array, int element) {
+
+        int firstIndex = 0, lastIndex = array.length - 1;
         int centralIndex = 0;
-        
-        
-        
-        while(firstIndex <= lastIndex){
-            
-            centralIndex = (firstIndex + lastIndex)/2;
-            
-            if(array[centralIndex] == element){
+
+        while (firstIndex <= lastIndex) {
+
+            centralIndex = (firstIndex + lastIndex) / 2;
+
+            if (array[centralIndex] == element) {
                 return centralIndex;
             }
-            
-            if(array[centralIndex] < element){
-                firstIndex = centralIndex +1;                 
-            }
-            
-            if(array[centralIndex] > element){
-                lastIndex = centralIndex-1;
-            }
-            
-        }
-        
-        return -1;
-    } 
 
+            if (array[centralIndex] < element) {
+                firstIndex = centralIndex + 1;
+            }
+
+            if (array[centralIndex] > element) {
+                lastIndex = centralIndex - 1;
+            }
+
+        }
+
+        return -1;
+    }
 
     public static void showArray(double[] array) {
         for (int i = 0; i < array.length; i++) {

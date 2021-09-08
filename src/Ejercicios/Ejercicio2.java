@@ -61,7 +61,7 @@ public class Ejercicio2 {
     //calculamos la cantidad de elementos mayores al promedio
     public static void numbersHigherThanTheAverage(int option) {
 
-        numbers = Arrays.fillArray(numbers);
+        numbers = Arrays.fillArrayRandom(numbers);
 
         var amount = 0;
         var average = average();

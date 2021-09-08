@@ -22,7 +22,7 @@ public class Ejercicio1 {
 
     public static void showNumber() {
 
-        numbers = Arrays.fillArray(numbers);
+        numbers = Arrays.fillArrayRandom(numbers);
         numbers = Arrays.orderArray_Bubble(numbers);
 
         System.out.println(lenghtNumber());
