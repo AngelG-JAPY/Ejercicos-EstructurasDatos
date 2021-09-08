@@ -230,7 +230,8 @@ public class Ejercicio7 {
         System.out.println("6. Calcular cuantos estudiantes obtuvieron notas de 18, 19 o 20.");
         System.out.println("7. Determinar cuantas notas fueron mayor al promedio");
         System.out.println("8. Calcular estudiantes aprobados y reprobados.");
-        System.out.println("9. Salir.");
+        System.out.println("9. Mostrar arreglo.");
+        System.out.println("10. Salir.");
         System.out.print("Opción: ");
     }
 
@@ -297,12 +298,15 @@ public class Ejercicio7 {
                     if (approved == -1 || fail == -1) {
                         System.out.println("Falta ordenar el registro de notas");
                     } else {
-                        System.out.println(approved + " estudiantes aprovaron el curso.");
-                        System.out.println(fail + " estudiantes reprovaron el curso.");
+                        System.out.println(approved + "% estudiantes aprovaron el curso.");
+                        System.out.println(fail + "% estudiantes reprovaron el curso.");
                     }
                     break;
                     
                 case 9:
+                    Arrays.showArray(grades);
+                    break;
+                case 10:
                     mainLoop = false;
                     break;
                     
@@ -310,6 +314,8 @@ public class Ejercicio7 {
                     System.out.println("Ingrese una opción valida.");
 
             }
+            
+            System.out.println("");
 
         }
 
