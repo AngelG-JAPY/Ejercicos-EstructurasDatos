@@ -32,8 +32,8 @@ public class Main {
         //Ejercicio2.valueOf_N(10);
         //Ejercicio2.numbersHigherThanTheAverage(0);
         
-        Ejercicio6.run();
+        //Ejercicio6.run();
         
-        
+        System.out.println(Math.random()*20);
     }
 }

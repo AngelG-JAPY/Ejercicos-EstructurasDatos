@@ -38,6 +38,15 @@ public class Ejercicio7 {
     }
 
     /**
+     * Llena los datos de forma aleatoria
+     */
+    public static void fillGradesRandom() {
+        for (int i = 0; i < grades.length; i++) {
+            grades[i] = (int) (Math.random() * 20) + 1;
+        }
+    }
+
+    /**
      * Calcula el promedio de los datos del arreglo
      *
      * @return promedio de tipo entero.
@@ -177,14 +186,15 @@ public class Ejercicio7 {
         }
 
     }
-    
+
     /**
      * Determina cuantos estudiantes reprovaron.
+     *
      * @return 100 si el ulitmo elemento del arreglo es menor a la nota minima.
-     * 0 si la primera nota es mayor a la nota minima. % de estudiantes reprovados
-     * en caso de no cumplirse ninguna. -1 si el arreglo no esta ordenado.
+     * 0 si la primera nota es mayor a la nota minima. % de estudiantes
+     * reprovados en caso de no cumplirse ninguna. -1 si el arreglo no esta
+     * ordenado.
      */
-
     public static int failingStudents() {
 
         int failing = 0;
@@ -207,6 +217,100 @@ public class Ejercicio7 {
             }
         } else {
             return -1;
+        }
+
+    }
+
+    public static void menu() {
+        System.out.println("1. Registrar las notas de los estudiantes");
+        System.out.println("2. Generar notas de forma aleatoria");
+        System.out.println("3. Calcular promedio de la clase.");
+        System.out.println("4. Ordenar notas (solo en forma asc)");
+        System.out.println("5. Nota mas alta y baja obtenida.");
+        System.out.println("6. Calcular cuantos estudiantes obtuvieron notas de 18, 19 o 20.");
+        System.out.println("7. Determinar cuantas notas fueron mayor al promedio");
+        System.out.println("8. Calcular estudiantes aprobados y reprobados.");
+        System.out.println("9. Salir.");
+        System.out.print("Opción: ");
+    }
+
+    public static void run() {
+        var mainLoop = true;
+        var option = 0;
+        int result, approved, fail;
+
+        while (mainLoop) {
+
+            menu();
+            option = sc.nextInt();
+
+            switch (option) {
+                case 1:
+                    System.out.println("Rellene las notas. Puede hacerlo separados por espacio (1 2 3...) o dando enter");
+                    fillGrades();
+                    System.out.println("");
+                    break;
+
+                case 2:
+                    fillGradesRandom();
+                    System.out.println("Se generaron las notas de forma éxitosa.");
+                    break;
+
+                case 3:
+                    System.out.println("El promedio de la clase es: " + gradesAverage());
+                    break;
+
+                case 4:
+                    orderGrades();
+                    System.out.println("Se ordenaron las notas de forma éxitosa.");
+                    break;
+
+                case 5:
+                    if (order) {
+                        System.out.println("La mayor nota obtenida en el curso fue: " + highestGrade());
+                        System.out.println("La menor nota obtenida en el curso fue: " + lowestGrade());
+                    } else {
+                        System.out.println("Falta ordernar el registro de notas.");
+                    }
+                    break;
+
+                case 6:
+                    result = searchInRange();
+                    System.out.println(result == -1 ? "Falta ordenar el registro de notas" : result + " estudiantes obtuvieron notas de 18,19 o 20.");
+                    break;
+
+                case 7:
+                    result = higherThanAverage();
+                    if (result == -1) {
+                        System.out.println("Falta ordenar el registro de notas");
+                    } else if (result == -2) {
+                        System.out.println("¡Tiene que calcular primero el promedio!");
+                    } else {
+                        System.out.println(result + "estudiantes obtuvieron notas mayores al promedio");
+                    }
+                    break;
+
+                case 8:
+                    approved = approvedStudents();
+                    fail = failingStudents();
+
+                    if (approved == -1 || fail == -1) {
+                        System.out.println("Falta ordenar el registro de notas");
+                    } else {
+                        System.out.println(approved + " estudiantes aprovaron el curso.");
+                        System.out.println(fail + " estudiantes reprovaron el curso.");
+                    }
+                    break;
+                    
+                case 9:
+                    mainLoop = false;
+                    break;
+                    
+                default:
+                    System.out.println("Ingrese una opción valida.");
+
+            }
+
         }
 
     }
