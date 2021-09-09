@@ -47,7 +47,7 @@ public class Ejercicio5 {
 
         expenses = foodExpenses.length + lodgingExpenses.length + transportationExpenses.length + clothingExpenses.length;
 
-        if (expenses > 18 || expenses < 0) {
+        if (expenses > 18) {
             System.out.println("La informacion registrada no coincide con los 18 gastos estipulados. Intentalo de nuevo.");
             return false;
         }
@@ -179,6 +179,7 @@ public class Ejercicio5 {
     public static void run(){
         var mainLoop = true;
         var option = 0;
+        var controller = false;
         
         while(mainLoop){
             
@@ -188,35 +189,50 @@ public class Ejercicio5 {
             
             switch(option){
                 case 1:
-                    recordExpenses();
+                    controller = recordExpenses();
                     break;
                     
                 case 2:
-                    System.out.println("Registre los  "+foodExpenses.length+ " gastos en comida separados por coma : ");
-                    recordFoodExpenses();
+                    if(controller){
+                        System.out.println("Registre los  " + foodExpenses.length + " gastos en comida separados por coma : ");
+                        recordFoodExpenses();
+
+                        System.out.println("Registre los  " + lodgingExpenses.length + " gastos en hospedaje separados por coma : ");
+                        recordLodgingExpenses();
+
+                        System.out.println("Registre los  " + transportationExpenses.length + " gastos en transporte separados por coma : ");
+                        recordTransportationExpenses();
+
+                        System.out.println("Registre los  " + clothingExpenses.length + " gastos en ropa separados por coma : ");
+                        recordClothingExpenses();
+                    }else {
+                        System.out.println("Falta asignar la cantidad de gastos correspondientes a cada tipo");
+                    }
                     
-                    System.out.println("Registre los  "+lodgingExpenses.length+ " gastos en hospedaje separados por coma : ");
-                    recordLodgingExpenses();
-                    
-                    System.out.println("Registre los  "+transportationExpenses.length+ " gastos en transporte separados por coma : ");
-                    recordTransportationExpenses();
-                    
-                    System.out.println("Registre los  "+clothingExpenses.length+ " gastos en ropa separados por coma : ");
-                    recordClothingExpenses();
                     break;
                     
                 case 3:
-                    totalCost();
-                    System.out.println("Total de gastos por: \n"
-                            + "Comida: "+totalCost[0]+"\n"
-                            + "Hospedaje: "+totalCost[1]+"\n"
-                            + "Transporte: "+totalCost[2]+"\n"
-                            + "Ropa: "+totalCost[3]+"\n"
-                    );
+                    if(controller){
+                        totalCost();
+                        System.out.println("Total de gastos por: \n"
+                                + "Comida: " + totalCost[0] + "\n"
+                                + "Hospedaje: " + totalCost[1] + "\n"
+                                + "Transporte: " + totalCost[2] + "\n"
+                                + "Ropa: " + totalCost[3] + "\n"
+                        );
+                    }else {
+                        System.out.println("Falta asignar la cantidad de gastos correspondientes a cada tipo");
+                    }
+                    
                     break;
                     
                 case 4:
-                    highExpense();
+                    if(controller){
+                        highExpense();
+                    }else {
+                        System.out.println("Falta asignar la cantidad de gastos correspondientes a cada tipo");
+                    }
+                    
                     break;
                     
                 case 5:

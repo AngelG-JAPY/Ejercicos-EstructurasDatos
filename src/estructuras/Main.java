@@ -31,7 +31,8 @@ public class Main {
         //System.out.print("Cantidad de elementos a guardar: ");
         //Ejercicio2.valueOf_N(10);
         //Ejercicio2.numbersHigherThanTheAverage(0);
+        Ejercicio5.run();
         //Ejercicio6.run();
-        Ejercicio7.run();
+        //Ejercicio7.run();
     }
 }

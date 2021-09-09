@@ -118,8 +118,9 @@ public class Ejercicio7 {
         } else {
             return -1;
         }
-
     }
+    
+    
 
     /**
      * Determina cuantos elementos son mayores al promedio
@@ -313,8 +314,8 @@ public class Ejercicio7 {
                 default:
                     System.out.println("Ingrese una opción valida.");
 
-            }
-            
+            }       
+                    
             System.out.println("");
 
         }
