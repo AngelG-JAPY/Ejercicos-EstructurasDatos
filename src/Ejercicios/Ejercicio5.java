@@ -238,12 +238,10 @@ public class Ejercicio5 {
                 case 5:
                     mainLoop = false;
                     System.out.println("");
+                    break;
                 default: 
                     System.out.println("Selecciono una opcion no valida. Intente de nuevo");
             }
-            
-            
-            
         }
     }
 

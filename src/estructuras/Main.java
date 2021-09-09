@@ -8,6 +8,7 @@ package estructuras;
 import Ejercicios.Arrays;
 import Ejercicios.Ejercicio1;
 import Ejercicios.Ejercicio2;
+import Ejercicios.Ejercicio3;
 import Ejercicios.Ejercicio5;
 import Ejercicios.Ejercicio6;
 import Ejercicios.Ejercicio7;
@@ -28,11 +29,12 @@ public class Main {
         var sc = new Scanner(System.in);
 
         //Ejercicio1.showNumber();
-        //System.out.print("Cantidad de elementos a guardar: ");
-        //Ejercicio2.valueOf_N(10);
-        //Ejercicio2.numbersHigherThanTheAverage(0);
-        Ejercicio5.run();
+        //Ejercicio2.run();
+        //Ejercicio3.run();
+        //Ejercicio5.run();
         //Ejercicio6.run();
         //Ejercicio7.run();
+        
+        //890500622-6
     }
 }
